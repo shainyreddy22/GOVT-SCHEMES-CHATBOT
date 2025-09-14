@@ -28,7 +28,8 @@ const SchemesPage = () => {
 
   const fetchSchemes = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/schemes');
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${API_URL}/api/schemes`);
       const data = await response.json();
       setSchemes(data);
       setLoading(false);
@@ -75,7 +76,8 @@ const SchemesPage = () => {
     
     setIsAiSearching(true);
     try {
-      const response = await axios.post('http://localhost:3001/api/schemes/search', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await axios.post(`${API_URL}/api/schemes/search`, {
         query: aiSearchQuery,
         language: t('language.english') // Pass current language
       });

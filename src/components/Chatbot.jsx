@@ -123,7 +123,8 @@ const Chatbot = ({ isOpen, onClose }) => {
     setIsTyping(true);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/chat', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await axios.post(`${API_URL}/api/chat`, {
         message: inputValue
       }, {
         timeout: 30000 // 30 second timeout for AI responses

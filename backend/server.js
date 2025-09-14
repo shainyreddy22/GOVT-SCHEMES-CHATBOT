@@ -7,8 +7,24 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Enable trust proxy for Railway/Heroku
+app.set('trust proxy', 1);
+
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174', 
+    'https://govt-schemes-chatbot.vercel.app',
+    'https://*.vercel.app',
+    'https://*.onrender.com',
+    'https://*.cyclic.sh',
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Initialize Gemini AI
