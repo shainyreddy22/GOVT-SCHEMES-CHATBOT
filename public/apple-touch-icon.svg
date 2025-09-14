@@ -1,0 +1,40 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Government building icon -->
+  <rect x="30" y="100" width="120" height="60" fill="white" opacity="0.95"/>
+  
+  <!-- Columns -->
+  <rect x="45" y="90" width="12" height="12" fill="white"/>
+  <rect x="64" y="90" width="12" height="12" fill="white"/>
+  <rect x="83" y="90" width="12" height="12" fill="white"/>
+  <rect x="102" y="90" width="12" height="12" fill="white"/>
+  <rect x="121" y="90" width="12" height="12" fill="white"/>
+  
+  <!-- Pillars -->
+  <rect x="45" y="100" width="8" height="60" fill="white" opacity="0.8"/>
+  <rect x="68" y="100" width="8" height="60" fill="white" opacity="0.8"/>
+  <rect x="91" y="100" width="8" height="60" fill="white" opacity="0.8"/>
+  <rect x="114" y="100" width="8" height="60" fill="white" opacity="0.8"/>
+  <rect x="137" y="100" width="8" height="60" fill="white" opacity="0.8"/>
+  
+  <!-- Top triangle (roof) -->
+  <polygon points="90,30 30,90 150,90" fill="white" opacity="0.95"/>
+  
+  <!-- Chat bubble -->
+  <circle cx="140" cy="50" r="25" fill="#FFD700"/>
+  <circle cx="130" cy="45" r="4" fill="white"/>
+  <circle cx="140" cy="45" r="4" fill="white"/>
+  <circle cx="150" cy="45" r="4" fill="white"/>
+  
+  <!-- AI sparkle effects -->
+  <circle cx="50" cy="40" r="3" fill="white" opacity="0.8"/>
+  <circle cx="160" cy="120" r="2" fill="white" opacity="0.6"/>
+  <circle cx="40" cy="140" r="2.5" fill="#FFD700" opacity="0.7"/>
+</svg>
