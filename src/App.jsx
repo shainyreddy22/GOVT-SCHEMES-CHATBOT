@@ -24,12 +24,21 @@ function App() {
 
   const fetchNotifications = async () => {
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const API_URL = import.meta.env.VITE_API_URL;
+      if (!API_URL) {
+        console.log('Backend not configured yet - running in frontend-only mode');
+        return;
+      }
       const response = await fetch(`${API_URL}/api/notifications`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
       setNotifications(data);
     } catch (error) {
-      console.error('Error fetching notifications:', error);
+      console.log('Backend not available - this is normal during initial deployment:', error.message);
+      // Set empty notifications array so the app still works
+      setNotifications([]);
     }
   };
 

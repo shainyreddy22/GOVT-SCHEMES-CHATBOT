@@ -123,7 +123,23 @@ const Chatbot = ({ isOpen, onClose }) => {
     setIsTyping(true);
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const API_URL = import.meta.env.VITE_API_URL;
+      
+      if (!API_URL) {
+        // Provide a helpful message when backend is not configured
+        setTimeout(() => {
+          const botMessage = {
+            id: messages.length + 2,
+            text: "Hello! I'm the AI assistant for Government Schemes. However, my backend service is not yet configured. To get AI-powered responses, please deploy the backend on Render.com and set the VITE_API_URL environment variable in Vercel. For now, you can browse the schemes in the navigation menu above!",
+            isBot: true,
+            timestamp: new Date()
+          };
+          setMessages(prev => [...prev, botMessage]);
+          setIsTyping(false);
+        }, 1000);
+        return;
+      }
+      
       const response = await axios.post(`${API_URL}/api/chat`, {
         message: inputValue
       }, {
