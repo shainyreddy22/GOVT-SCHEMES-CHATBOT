@@ -29,7 +29,7 @@ app.use(express.json());
 
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'your-gemini-api-key');
-const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+const model = genAI.getGenerativeModel({ model: 'models/gemini-2.5-flash' });
 
 // In-memory storage for notifications (in production, use a database)
 let notifications = [
