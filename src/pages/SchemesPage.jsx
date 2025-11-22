@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Search, Filter, ExternalLink, Calendar, Users, DollarSign, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
@@ -22,10 +22,6 @@ const SchemesPage = () => {
     fetchSchemes();
   }, []);
 
-  useEffect(() => {
-    filterSchemes();
-  }, [searchTerm, selectedCategory, schemes]);
-
   const fetchSchemes = async () => {
     try {
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
@@ -39,7 +35,7 @@ const SchemesPage = () => {
     }
   };
 
-  const filterSchemes = () => {
+  const filterSchemes = useCallback(() => {
     let allSchemes = [];
     
     // Flatten all schemes from different categories
@@ -69,7 +65,11 @@ const SchemesPage = () => {
     }
 
     setFilteredSchemes(allSchemes);
-  };
+  }, [schemes, aiSearchResults, selectedCategory, searchTerm]);
+
+  useEffect(() => {
+    filterSchemes();
+  }, [filterSchemes]);
 
   const handleAiSearch = async () => {
     if (!aiSearchQuery.trim()) return;

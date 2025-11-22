@@ -4,10 +4,8 @@ services:
     env: node
     region: oregon
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    repo: https://github.com/yourusername/govt-schemes-chatbot
-    rootDir: backend
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -15,3 +13,5 @@ services:
         sync: false  # Set manually in Render dashboard
       - key: FRONTEND_URL
         sync: false  # Set manually in Render dashboard
+      - key: PORT
+        value: 3001

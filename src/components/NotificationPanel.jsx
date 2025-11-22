@@ -31,7 +31,7 @@ const NotificationPanel = ({ notifications }) => {
   const getTimeAgo = (timestamp) => {
     try {
       return formatDistanceToNow(new Date(timestamp), { addSuffix: true });
-    } catch (error) {
+    } catch {
       return 'Recently';
     }
   };
