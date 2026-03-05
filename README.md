@@ -1,7 +1,7 @@
 # 🇮🇳 Gov Schemes India - AI-Powered Government Schemes Assistant
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/govt-schemes-chatbot)
-[![Deploy on Render](https://render.app/button.svg)](https://govt-schemes-chatbot-4f8m.onrender.com)
+[![Deploy on Render](https://render.com/images/deploy-to-render-button.svg)](https://govt-schemes-chatbot-4f8m.onrender.com)
 
 > **A comprehensive web application that provides information about Indian Government schemes through an AI-powered chatbot with multilingual support and voice interaction.**
 
